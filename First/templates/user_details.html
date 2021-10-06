@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+
+{% block content %}
+
+
+
+
+<div class="card col-md-6 offset-md-3">
+    <div class="card-body">
+      <h5 class="card-title">Details</h5>
+      <div class="card-text inner-text">
+        {% if request.user.is_authenticated %}
+        {% for items in item %}
+<label> Name:</label> {{items.Username}}<br>
+<label>Number:</label>         {{items.Number}}<br>
+<label> Gender:</label>        {{items.Gender}}<br>
+<label> Singer:</label>        {{items.Singer}}<br>
+        {% endfor %}
+        {% endif %}
+        <a  class="fa fa-info-circle" href="{% url 'main' %}">User Details</a>
+
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

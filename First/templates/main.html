@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+
+{% block content %}
+
+    
+
+    <div class="card col-md-6 offset-md-3">
+        <div class="card-body">
+          <h5 class="card-title">Details</h5>
+          <div class="card-text inner-text">
+            {% if user.is_authenticated %}
+            {% for items in item %}  
+            <img src="{{ items.Image.url }}" height="100px" width="100px" alt="Pic"><br>
+            <label>Name: </label> {{items.Username}}<br>
+            <label> Number :</label> {{items.Number}}<br>
+            <a class="fas fa-edit" href="{% url 'edit' items.id %}">Edit</a>
+            <a  class="fa fa-info-circle" href="{% url 'user_details' %}">User Details</a>
+            <a class="fas fa-sign-out-alt"  href="{% url 'logout' %}">Logout</a>
+    
+
+            {% endfor %}
+            {% endif %}    
+          </p>
+        </div>
+      </div>
+    {% endblock %}

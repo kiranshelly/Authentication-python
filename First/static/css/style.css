@@ -1,0 +1,21 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+}
+.main-page{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+.input-data > label{
+    width:250px
+}
+
+/* USER PROFILE PAGE */
+.inner-text{
+    padding:20px;
+    background-color: aqua;
+}

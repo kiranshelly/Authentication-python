@@ -1,0 +1,41 @@
+{%extends 'base.html'%}
+
+{% block content %}
+
+
+
+<div class="card col-md-6 offset-md-3">
+        <div class="card-body">
+          <h5 class="card-title text-center ">Details</h5>
+          <div class="card-text inner-text">
+            {% if user.is_authenticated %}
+            <form method="POST" class="form">
+            {% for items in item %}
+      <div class="text-center" >
+        <img src="{{ items.Image.url }}" height="100px" width="100px" alt="Pic"><br><br>
+      </div>           
+        <label>Name:</label>&nbsp; <input type="text" name="username" value="{{items.Username}}">
+        <label>Number:</label>&nbsp;<input type="text" name="number" value="{{items.Number}}"></br>
+        {% csrf_token %}
+        <label>Gender:</label>&nbsp;
+            <input type="radio" name="gender" value="male"> Male
+            <input type="radio" name="gender" value="female"> Female<br>
+            <label>Singer:</label>&nbsp;
+          <input type="checkbox" name="singer" value="Manni Sandhu">Manni Sandhu
+        <input type="checkbox" name="singer" value="Navaan Sandhu">Navaan Sandhu
+        <input type="checkbox" name="singer" value="Amar Sandhu">Amar Sandhu<br>
+            <button class="btn btn-success">Save </button>
+            <a class="fa fa-info-circle"  href="{% url 'main' %}">Details</a>
+
+        </form > 
+        
+        
+            {% endfor %}
+            {% endif %}
+
+        
+        </div>
+      </div>
+</div>
+
+    {% endblock %}

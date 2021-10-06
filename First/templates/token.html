@@ -1,0 +1,11 @@
+{%extends 'base.html'%}
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        <input type="number" name="otp" >
+        <button>
+            Save
+        </button>
+    </form>
+    {% endblock %}
